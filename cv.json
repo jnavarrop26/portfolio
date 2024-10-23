@@ -1,0 +1,210 @@
+{
+  "basics": {
+    "name": "Jose Navarro",
+    "label": "Software Engineer",
+    "image": "/profile-photo.webp",
+    "email": "antonionp26@gmail.com",
+    "phone": "+57 3195398968",
+    "url": "https://github.com/jnavarrop26",
+    "summary": "Ingeniero de Software en formación, con una marcada pasión por el desarrollo backend y la creación de soluciones tecnológicas eficientes. He tenido la oportunidad de participar en proyectos que me han permitido optimizar procesos y construir sistemas escalables. Siempre en busca de nuevos desafíos, me motiva el aprendizaje constante y el poder contribuir a equipos dinámicos con ideas frescas y soluciones innovadoras. ",
+    "location": {
+      "address": "Bogotá D.C",
+      "postalCode": "",
+      "city": "Bogotá D.C",
+      "countryCode": "CO",
+      "region": "Colombia"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "jose-navarro",
+        "url": "https://www.linkedin.com/in/jose-navarro-b0361b23b/"
+      },
+      {
+        "network": "GitHub",
+        "username": "jnavarrop26",
+        "url": "https://github.com/jnavarrop26"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Parson - Kinetics",
+      "position": "Líder Desarrollador de Software",
+      "url": "https://parsonskinetics.com/",
+      "startDate": "2024 ",
+      "endDate": "Actualidad",
+      "summary": "Proyecto universitario colaborativo con la Cámara de Comercio de Bogotá, enfocado en soluciones de desarrollo backend para optimización de procesos.",
+      "highlights": [
+        "Desarrollo de estimaciones energéticas",
+        "Automatización del pipeline de datos",
+        "Preparación para escalabilidad futura",
+        "Desarrollo de API RESTful"
+      ]
+    },
+    {
+      "name": "Proyectos Empíricos",
+      "position": "Backend Developer",
+      "url": "https://github.com/jnavarrop26",
+      "startDate": "",
+      "endDate": "",
+      "summary": "Proyectos individuales con enfoque en soluciones backend utilizando Java y Spring Boot.",
+      "highlights": [
+        "Implementación de soluciones backend con Spring Boot"
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Universidad Central",
+      "url": "https://www.ucentral.edu.co/",
+      "area": "Ingeniería de Sistemas",
+      "studyType": "Pregrado",
+      "startDate": "2022",
+      "endDate": "Actualidad",
+      "score": "",
+      "courses": [
+        "Modelado de Software",
+        "Optimización de Procesos de Desarrollo",
+        "Gestión de Proyectos de Software",
+        "Evaluación de Algoritmos",
+        "Resolución Numérica de Problemas",
+        "Simulación Computacional"
+      ]
+    },
+    {
+      "institution": "Universidad Tecnológica de Bolívar",
+      "url": "https://www.utb.edu.co/",
+      "area": "Desarrollo Web",
+      "studyType": "Curso",
+      "startDate": "2022",
+      "endDate": "2023",
+      "score": "",
+      "courses": [
+        "Desarrollo de aplicaciones web",
+        "Ciclo de vida del software",
+        "Seguridad en aplicaciones web",
+        "API REST",
+        "Bases de datos",
+        "Programación en Python y Java"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+  {
+    "name": "Java",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Python",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "JavaScript",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "SQL",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Spring Boot",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Django",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "React",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Docker",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "GIT",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "AWS",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "PostMan",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Maven",
+    "level": "Entry",
+    "category": "Backend Development"
+  }
+],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "B1"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Software Development",
+      "keywords": [
+        "Backend Development",
+        "API Design",
+        "Process Optimization"
+      ]
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "Parson - Kinetics",
+      "isActive": true,
+      "startDate": "2024-08-01",
+      "endDate": "Actualidad",
+      "description": "Consiste en desarrollar que ofrezca nuevas capacidades, como modelo financiero que permita evaluar la rentabilidad de los proyectos de energía eólica o la posibilidad de implementar un sistema de aprendizaje automático para la predicción a largo plazo de la potencia eólica. El software debe conectarse a una fuente secundaria de datos históricos del viento, procesar esos datos y calcular la producción energética de una turbina eólica basada en las condiciones del viento de una localización específica",
+      "highlights": [
+        "Automatización de procesos",
+        "Preparación de infraestructura para escalabilidad",
+        "Uso de API OpenMeteo",
+        "Desarrollo en Django y React"
+      ],
+      "url": "https://parsonskinetics.com/",
+      "github": "https://github.com/jnavarrop26?tab=repositories"
+    },
+    {
+      "name": "Proyectos Empíricos",
+      "isActive": true,
+      "startDate": "",
+      "endDate": "",
+      "description": "Desarrollo de soluciones backend utilizando el ecosistema Spring.",
+      "highlights": [
+        "Implementación de soluciones con Spring Boot",
+        "Optimización de procesos en Java"
+      ],
+      "url": "https://github.com/jnavarrop26",
+      "github": "https://github.com/jnavarrop26?tab=repositories"
+    }
+  ]
+}
