@@ -9,6 +9,8 @@
 <hr/>
 <p>
 CV JSON Schema of <a href="https://jsonresume.org/schema/">jsonresume.org</a> </p>
+
+
 <p>
 Based on the design of <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a> </p>
 
@@ -29,11 +31,11 @@ Based on the design of <a href="https://github.com/BartoszJarocki/cv">Bartosz Ja
 
 ## 👨‍💻 Stack
 
-- [**Astro**](https://astro.build/) - El framework web de la nueva época.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Menu desplegable con atajos de teclado hecho en puro Javascript.
+- [**Astro**](https://astro.build/) - The web framework for the modern era.
+- [**TypeScript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
+- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Dropdown menu with keyboard shortcuts built in pure JavaScript.
 
 
 
 ## 🔑 Licencia
-[MIT](LICENSE) - Creado por [Jose Navarro](https://github.com/jnavarrop26)
+[MIT](LICENSE) - Created by [Jose Navarro](https://github.com/jnavarrop26)
