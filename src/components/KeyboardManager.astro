@@ -45,7 +45,7 @@ const SOCIAL_ICONS: SocialIcon = {
 
 const profilesInfo = profiles.map(({ network, url }) => {
   const icon = SOCIAL_ICONS[network]
-  const firstLetter = network[0].toUpperCase()
+  const firstLetter = (network ?? '')?.[0]?.toUpperCase() ?? ''
 
   return {
     id: network,

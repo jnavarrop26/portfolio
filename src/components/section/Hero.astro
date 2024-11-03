@@ -15,6 +15,11 @@ const SOCIAL_ICONS: Record<string, any> = {
   LinkedIn,
   X,
 };
+
+const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
+const linkedUrl = linkedInfo?.url
+
+const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 ---
 
 <Section>
@@ -24,13 +29,17 @@ const SOCIAL_ICONS: Record<string, any> = {
       <h2>{label}</h2>
       <span>
         <WorldMap />
-        {city}, {region}</span>
-      <footer>
+        {city}, {region}
+      </span>
+      <footer class="print">
+        {printInfo}
+      </footer>
+      <footer class="no-print">
         {
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electronico a ${name} la correo ${email}`}
+              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -38,12 +47,11 @@ const SOCIAL_ICONS: Record<string, any> = {
             </a>
           )
         }
-
         {
           phone && (
             <a
-              href={`mailto:${phone}`}
-              title={`Llamar por telefono a ${name} al numero ${phone}`}
+              href={`tel:${phone}`}
+              title={`Llamar por teléfono a ${name} al número ${phone}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -53,7 +61,7 @@ const SOCIAL_ICONS: Record<string, any> = {
         }
         {
           profiles.map(({ network, url }) => {
-            const Icon = SOCIAL_ICONS[network];
+            const Icon = SOCIAL_ICONS[network]
 
             return (
               <a
@@ -64,7 +72,7 @@ const SOCIAL_ICONS: Record<string, any> = {
               >
                 <Icon />
               </a>
-            );
+            )
           })
         }
       </footer>
@@ -106,7 +114,7 @@ const SOCIAL_ICONS: Record<string, any> = {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 128px;
-    border-radius: 12px;
+    border-radius: 16px;
   }
 
   span {

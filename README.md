@@ -10,7 +10,6 @@
 <p>
 CV JSON Schema of <a href="https://jsonresume.org/schema/">jsonresume.org</a> </p>
 
-
 <p>
 Based on the design of <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a> </p>
 
@@ -22,7 +21,7 @@ Based on the design of <a href="https://github.com/BartoszJarocki/cv">Bartosz Ja
 ![MIT Badge](https://img.shields.io/badge/License-MIT-007EC6?style=flat)
 ![npm Badge](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=fff&style=flat)
 ![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat)
-
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=fff&style=flat)
 
 
 
@@ -39,3 +38,7 @@ Based on the design of <a href="https://github.com/BartoszJarocki/cv">Bartosz Ja
 
 ## 🔑 Licencia
 [MIT](LICENSE) - Created by [Jose Navarro](https://github.com/jnavarrop26)
+
+![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=fff&style=flat)
+![X Badge](https://img.shields.io/badge/X-000000?logo=x&logoColor=fff&style=flat)
+![Instagram Badge](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=fff&style=flat)
