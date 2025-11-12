@@ -1,44 +1,17 @@
 ---
 import Section from "../Section.astro";
 import { skills } from "cv.json";
-import Java from '@/icons/Java.astro';
-import Python from '@/icons/Python.astro';
-import JavaScript from '@/icons/javascript.astro';
-import SQL from '@/icons/sql.astro';
-import SpringBoot from '@/icons/Spring.astro';
-import Django from '@/icons/Django.astro';
-import React from '@/icons/react.astro';
-import Docker from '@/icons/Docker.astro';
-import GIT from '@/icons/Git.astro';
-import AWS from '@/icons/Aws.astro';
-import PostMan from '@/icons/Postman.astro';
-import Maven from '@/icons/Maven.astro';
 
 
-const SKILLS_ICONS: Record<string, any> = {
-  Java,
-  Python,
-  JavaScript,
-  SQL,
-  "Spring Boot": SpringBoot,
-  Django,
-  React,
-  Docker,
-  GIT,
-  AWS,
-  PostMan,
-  Maven,
-};
+
 ---
 
 <Section title="Habilidades">
   <ul>
     {skills.map(({ name, }) => {
-        const iconName = name === "Spring Boot" ? "Spring Boot" : name;
-        const Icon = SKILLS_ICONS[iconName];
         return (
           <li>
-            {<Icon && <Icon />} <span>{name}</span>
+            <span>{name}</span>
           </li>
         )
         })
@@ -55,9 +28,9 @@ const SKILLS_ICONS: Record<string, any> = {
 
   li {
     align-items: center;
-    background: #eee;
+    background: #414652;
     border-radius: 6px;
-    color: black;
+    color: #ffffff;
     display: flex;
     font-size: 0.8rem;
     font-weight: 500;

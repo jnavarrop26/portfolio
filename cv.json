@@ -6,7 +6,7 @@
     "email": "antonionp26@gmail.com",
     "phone": "+57 3195398968",
     "url": "https://github.com/jnavarrop26",
-    "summary": "Ingeniero de Software en formación, con una marcada pasión por el desarrollo backend y la creación de soluciones tecnológicas eficientes. He tenido la oportunidad de participar en proyectos que me han permitido optimizar procesos y construir sistemas escalables. Siempre en busca de nuevos desafíos, me motiva el aprendizaje constante y el poder contribuir a equipos dinámicos con ideas frescas y soluciones innovadoras. ",
+    "summary": "Ingeniería de Sistemas con experiencia comprobada en el diseño y desarroll de soluciones backend utilizando Java y el ecosistema Spring. Especializado en la arquitectura de sistemas escalables, desde el análisiy especificación de requisitos (ISO/IEC/IEEE 29148) hasta la implementación de APIs (REST, SOAP) que integran capacidades delas necesidades establecidas. Destaco por mi capacidad para transformar desafíos de negocio en soluciones técnicas elegantes, aplicando patrones de diseño, principios SOLID y metodologías ágiles en proyectos reales. Combino sólidas competencias técnicas con habilidades de liderazgo, comunicación efectiva entre equipos multidisciplinarios y pensamiento analítico, orientado a aportar valor inmediato en iniciativas de transformación digital e hiperautomatizaciónque impulsen la innovación empresarial.",
     "location": {
       "address": "Bogotá D.C",
       "postalCode": "",
@@ -29,12 +29,12 @@
   },
   "work": [
     {
-      "name": "Parson - Kinetics",
-      "position": "Líder Desarrollador de Software",
+      "name": "Parsons - Kinetics",
+      "position": "Desarrollador Backend - Sistema de Estimación de Energía Eólica",
       "url": "https://parsonskinetics.com/",
-      "startDate": "2024 ",
-      "endDate": "Actualidad",
-      "summary": "Proyecto universitario colaborativo con la Cámara de Comercio de Bogotá, enfocado en soluciones de desarrollo backend para optimización de procesos.",
+      "startDate": "Feb 2024 ",
+      "endDate": "Nov 2024",
+      "summary": "Diseñé e implementé un sistema completo de estimación de producción de energía eólica integrando datos históricos meteorológicos de Open Meteo API utilizando Python y Django. Desarrollé un pipeline automatizado de ETL (Extract, Transform, Load) que procesa consultas geoespaciales mediante coordenadas geográficas y rangos temporales personalizados, aplicando bibliotecas científicas como NumPy y Pandas para análisis estadístico y generación de predicciones de producción energética. Arquitecturé una API RESTful con Django REST Framework que expone endpoints para consultas de estimación, integración de datos meteorológicos en tiempo real y gestión de historial de consultas con persistencia mediante Django ORM. Implementé un módulo avanzado de visualización de datos utilizando Matplotlib y Seaborn que genera análisis.",
       "highlights": [
         "Desarrollo de estimaciones energéticas",
         "Automatización del pipeline de datos",
@@ -43,14 +43,42 @@
       ]
     },
     {
-      "name": "Proyectos Empíricos",
-      "position": "Backend Developer",
-      "url": "https://github.com/jnavarrop26",
-      "startDate": "",
-      "endDate": "",
-      "summary": "Proyectos individuales con enfoque en soluciones backend utilizando Java y Spring Boot.",
+      "name": "SICOFAR-K",
+      "position": "Ingeniero de Software - Diseñador del Sistema",
+      "url": "",
+      "startDate": "Ene 2024",
+      "endDate": "Actualidad",
+      "summary": "Lideré el diseño integral de un sistema web para la gestión de residuos plásticos, realizando el análisis y especificación de requisitos según la norma ISO/IEC/IEEE 29148-2011, definiendo requisitos funcionales y no funcionales que garantizan la trazabilidad completa desde la recolección hasta la comercialización. Desarrollé la arquitectura del sistema basada en patrón MVC y arquitectura por capas, documentando mediante diagramas UML (casos de uso, clases, componentes, secuencia y despliegue) los módulos de control de residuos, procesamiento y facturación automatizada. Diseñé el modelo de datos mediante diagramas entidad-relación normalizados y elaboré prototipos de interfaces de media fidelidad, optimizando los flujos de interacción para el registro de material, control de procesamiento y generación automática de facturas. Establecí criterios de validación del diseño aplicando la norma IEEE 29119-3 para pruebas de software y métricas de calidad alineadas con ISO/IEC 25010, evaluando usabilidad, rendimiento, seguridad y escalabilidad. Documenté integralmente el proyecto incluyendo especificación de requisitos, diagramas arquitectónicos, modelo de datos y matriz de trazabilidad, garantizando una base técnica sólida para la fase de implementación.",
       "highlights": [
-        "Implementación de soluciones backend con Spring Boot"
+        "Implementación de soluciones backend con Spring Boot",
+        "ISO/IEC/IEEE 29148-2011 (Ingeniería de Requisitos)",
+        "Diseño de Arquitectura MVC y UML",
+        "Modelado de Datos y Prototipado de Interfaces",
+        "Norma IEEE 29119-3 y ISO/IEC 25010 (Pruebas y Calidad de Software)"
+      ]
+    },
+    {
+      "name": "Ingeniero de Software Backend - Ecosistema Java",
+      "position": "Ingeniero de Software",
+      "url": "https://github.com/jnavarrop26",
+      "startDate": "Ene 2022",
+      "endDate": "Actualidad",
+      "summary": " Mi experiencia en el desarrollo con Java y el ecosistema Spring se extiende al diseño e implementación de APIs utilizando diversos paradigmas. He creado APIs RESTful usando Spring Web y Spring MVC, he implementado endpoints GraphQL con librerías como Spring GraphQL, y he trabajado con servicios SOAP a través de Spring WS para la interoperabilidad con sistemas existentes. Adicionalmente, he integrado capacidades de inteligencia artificial en aplicaciones pequenas utilizando Spring AI,  Consciente de la demanda de comunicaciones de alto rendimiento en arquitecturas modernas, actualmente estoy explorando activamente la integración de gRPC con Spring para construir servicios de interconexión aún más eficientes y escalables dentro del ecosistema Java.",
+      "highlights": [
+        "Java",
+        "Spring Boot",
+        "Spring Data JPA",
+        "Hibernate",
+        "Spring MVC",
+        "Spring AI",
+        "Maven",
+        "Bash Scripting",
+        "APIs RESTful, GraphQL y SOAP",
+        "Exploración de gRPC con Spring",
+        "PSQL - PostgreSQL",
+        "Docker",
+        "GIT"
+
       ]
     }
   ],
@@ -108,7 +136,17 @@
   {
     "name": "JavaScript",
     "level": "Entry",
-    "category": "Backend Development"
+    "category": "Front End Development"
+  },
+  {
+    "name": "HTML",
+    "level": "Entry",
+    "category": "Front End Development"
+  },
+  {
+    "name": "CSS",
+    "level": "Entry",
+    "category": "Front End Development"
   },
   {
     "name": "SQL",
@@ -116,7 +154,32 @@
     "category": "Backend Development"
   },
   {
+    "name": "PSQL - PostgreSQL",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
     "name": "Spring Boot",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Spring Data JPA",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Hibernate",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Spring AI",
+    "level": "Entry",
+    "category": "Backend Development"
+  },
+  {
+    "name": "Spring MVC",
     "level": "Entry",
     "category": "Backend Development"
   },
@@ -163,7 +226,7 @@
     },
     {
       "language": "English",
-      "fluency": "B1"
+      "fluency": "B2"
     }
   ],
   "interests": [
@@ -172,27 +235,16 @@
       "keywords": [
         "Backend Development",
         "API Design",
-        "Process Optimization"
+        "Process Optimization",
+        "Scalable Systems",
+        "Distributed Systems",
+        "Networking Protocols"
+        
       ]
     }
   ],
   "references": [],
   "projects": [
-    {
-      "name": "Parson - Kinetics",
-      "isActive": true,
-      "startDate": "2024-08-01",
-      "endDate": "Actualidad",
-      "description": "Consiste en desarrollar que ofrezca nuevas capacidades, como modelo financiero que permita evaluar la rentabilidad de los proyectos de energía eólica o la posibilidad de implementar un sistema de aprendizaje automático para la predicción a largo plazo de la potencia eólica. El software debe conectarse a una fuente secundaria de datos históricos del viento, procesar esos datos y calcular la producción energética de una turbina eólica basada en las condiciones del viento de una localización específica",
-      "highlights": [
-        "Automatización de procesos",
-        "Preparación de infraestructura para escalabilidad",
-        "Uso de API OpenMeteo",
-        "Desarrollo en Django y React"
-      ],
-      "url": "https://parsonskinetics.com/",
-      "github": "https://github.com/jnavarrop26?tab=repositories"
-    },
     {
       "name": "Proyectos Empíricos",
       "isActive": true,
