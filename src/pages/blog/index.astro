@@ -1,0 +1,338 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import PublicationIcon from "@/icons/icon-publication.astro";
+
+const allPubs = await getCollection("publications", ({ data }) => !data.draft);
+
+const sorted = allPubs.sort(
+  (a, b) =>
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
+);
+
+const articles = sorted.filter((p) => p.data.type === "article");
+const papers   = sorted.filter((p) => p.data.type === "paper");
+
+// Todas las etiquetas únicas
+const allTags = [...new Set(sorted.flatMap((p) => p.data.tags))].sort();
+
+const typeLabel: Record<string, string> = {
+  article: "Publicación",
+  paper:   "Artículo",
+};
+---
+
+<Layout title="Publicaciones — Jose Navarro">
+  <main>
+    <header class="page-header">
+      <a href="/" class="back-link">← Volver al portafolio</a>
+      <h1>Publicaciones</h1>
+      <p>Publicaciones técnicas y artículos académicos sobre ingeniería de software.</p>
+    </header>
+
+    <!-- Sistema de etiquetas -->
+    <div class="tag-filter">
+      <label for="tag-select">Filtrar por etiqueta</label>
+      <select id="tag-select">
+        <option value="all">Todas</option>
+        {allTags.map((tag) => (
+          <option value={tag}>{tag}</option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Publicaciones Técnicas -->
+    {articles.length > 0 && (
+      <section data-section="article">
+        <h2><PublicationIcon /> Publicaciones Técnicas</h2>
+        <ul>
+          {articles.map((pub) => (
+            <li data-tags={pub.data.tags.join(",")}>
+              <a href={`/blog/${pub.id}`} class="pub-card">
+                <div class="pub-meta">
+                  <span class="pub-badge pub-badge--article">
+                    {typeLabel[pub.data.type]}
+                  </span>
+                  <time datetime={pub.data.publishedAt}>
+                    {new Date(pub.data.publishedAt).toLocaleDateString("es-CO", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </div>
+                <h3>{pub.data.title}</h3>
+                <p>{pub.data.summary}</p>
+                <div class="tags">
+                  {pub.data.tags.map((tag) => (
+                    <span data-tag={tag}>{tag}</span>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <!-- Artículos -->
+    {papers.length > 0 && (
+      <section data-section="paper">
+        <h2><PublicationIcon /> Artículos</h2>
+        <ul>
+          {papers.map((pub) => (
+            <li data-tags={pub.data.tags.join(",")}>
+              <a href={`/blog/${pub.id}`} class="pub-card">
+                <div class="pub-meta">
+                  <span class="pub-badge pub-badge--paper">
+                    {typeLabel[pub.data.type]}
+                  </span>
+                  <time datetime={pub.data.publishedAt}>
+                    {new Date(pub.data.publishedAt).toLocaleDateString("es-CO", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                </div>
+                <h3>{pub.data.title}</h3>
+                <p>{pub.data.summary}</p>
+                <div class="tags">
+                  {pub.data.tags.map((tag) => (
+                    <span data-tag={tag}>{tag}</span>
+                  ))}
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <p class="empty-msg" style="display:none">No hay publicaciones con esta etiqueta.</p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: #111; }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: system-ui, sans-serif;
+  }
+
+  .page-header p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  /* ── Tag filter ── */
+  .tag-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag-filter label {
+    font-size: 0.78rem;
+    color: #666;
+    white-space: nowrap;
+    font-family: system-ui, sans-serif;
+  }
+
+  #tag-select {
+    font-size: 0.78rem;
+    color: #111;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    font-family: system-ui, sans-serif;
+  }
+
+  #tag-select:focus {
+    border-color: #aaa;
+  }
+
+  /* ── Sections ── */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  section[hidden] { display: none; }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f2f2f2;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  h2 :global(svg) {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li[hidden] { display: none; }
+
+  .pub-card {
+    display: block;
+    padding: 1.2rem;
+    border: 1px solid #f2f2f2;
+    border-radius: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+
+  .pub-card:hover {
+    border-color: #ddd;
+  }
+
+  .pub-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+
+  .pub-badge--article {
+    background: #e8f4fd;
+    color: #1a73e8;
+  }
+
+  .pub-badge--paper {
+    background: #f0f4ff;
+    color: #4f46e5;
+  }
+
+  time {
+    font-size: 0.75rem;
+    color: #999;
+  }
+
+  .pub-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #111;
+    font-family: system-ui, sans-serif;
+    line-height: 1.4;
+  }
+
+  .pub-card p {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tags span {
+    background: #f2f2f2;
+    color: #444;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+
+  .tags span.tag-match {
+    background: #111;
+    color: #fff;
+  }
+
+  .empty-msg {
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 600px) {
+    main { padding: 2rem 1rem; }
+  }
+</style>
+
+<script>
+  const select   = document.querySelector<HTMLSelectElement>("#tag-select")!;
+  const items    = document.querySelectorAll<HTMLLIElement>("li[data-tags]");
+  const sections = document.querySelectorAll<HTMLElement>("section[data-section]");
+  const emptyMsg = document.querySelector<HTMLParagraphElement>(".empty-msg")!;
+
+  function filter(tag: string) {
+    items.forEach((item) => {
+      const tags = item.dataset.tags?.split(",") ?? [];
+      const show = tag === "all" || tags.includes(tag);
+      item.hidden = !show;
+
+      item.querySelectorAll<HTMLSpanElement>(".tags span").forEach((span) => {
+        span.classList.toggle("tag-match", span.dataset.tag === tag);
+      });
+    });
+
+    let totalVisible = 0;
+    sections.forEach((section) => {
+      const visible = [...section.querySelectorAll("li[data-tags]")].some((li) => !(li as HTMLElement).hidden);
+      section.hidden = !visible;
+      if (visible) totalVisible++;
+    });
+
+    emptyMsg.style.display = totalVisible === 0 ? "block" : "none";
+  }
+
+  select.addEventListener("change", () => filter(select.value));
+</script>

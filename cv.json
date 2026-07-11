@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Jose Navarro",
-    "label": "Software Engineer",
+    "label": "Software Engineering - Microsoft Student Ambassadors - AI and Quantum Computing Enthusiast",
     "image": "/profile-photo.webp",
     "email": "antonionp26@gmail.com",
     "phone": "+57 3195398968",
     "url": "https://github.com/jnavarrop26",
-    "summary": "Ingeniería de Sistemas con experiencia comprobada en el diseño y desarroll de soluciones backend utilizando Java y el ecosistema Spring. Especializado en la arquitectura de sistemas escalables, desde el análisiy especificación de requisitos (ISO/IEC/IEEE 29148) hasta la implementación de APIs (REST, SOAP) que integran capacidades delas necesidades establecidas. Destaco por mi capacidad para transformar desafíos de negocio en soluciones técnicas elegantes, aplicando patrones de diseño, principios SOLID y metodologías ágiles en proyectos reales. Combino sólidas competencias técnicas con habilidades de liderazgo, comunicación efectiva entre equipos multidisciplinarios y pensamiento analítico, orientado a aportar valor inmediato en iniciativas de transformación digital e hiperautomatizaciónque impulsen la innovación empresarial.",
+    "summary": "Ingeniero de Software Backend especializado en Java y el ecosistema Spring. Diseño e implemento sistemas distribuidos — desde la arquitectura y especificación  de requisitos hasta el consumo de servicios externos, integración de APIs   y comunicación asíncrona con Kafka. Experiencia desplegando en GCP, asegurando identidad con Keycloak y aplicando principios SOLID, patrones  de diseño y estándares ISO/IEC en proyectos reales. Actualmente explorando  Spring AI y gRPC para sistemas de alto rendimiento.",
     "location": {
       "address": "Bogotá D.C",
       "postalCode": "",
@@ -24,62 +24,59 @@
         "network": "GitHub",
         "username": "jnavarrop26",
         "url": "https://github.com/jnavarrop26"
+      },
+      {
+        "network": "DevTo",
+        "username": "janp",
+        "url": "https://dev.to/janp"
       }
     ]
   },
   "work": [
     {
       "name": "Parsons - Kinetics",
-      "position": "Desarrollador Backend - Sistema de Estimación de Energía Eólica",
+      "position": "Desarrollador Backend",
       "url": "https://parsonskinetics.com/",
       "startDate": "Feb 2024 ",
       "endDate": "Nov 2024",
-      "summary": "Diseñé e implementé un sistema completo de estimación de producción de energía eólica integrando datos históricos meteorológicos de Open Meteo API utilizando Python y Django. Desarrollé un pipeline automatizado de ETL (Extract, Transform, Load) que procesa consultas geoespaciales mediante coordenadas geográficas y rangos temporales personalizados, aplicando bibliotecas científicas como NumPy y Pandas para análisis estadístico y generación de predicciones de producción energética. Arquitecturé una API RESTful con Django REST Framework que expone endpoints para consultas de estimación, integración de datos meteorológicos en tiempo real y gestión de historial de consultas con persistencia mediante Django ORM. Implementé un módulo avanzado de visualización de datos utilizando Matplotlib y Seaborn que genera análisis.",
+      "summary": "",
       "highlights": [
-        "Desarrollo de estimaciones energéticas",
-        "Automatización del pipeline de datos",
-        "Preparación para escalabilidad futura",
-        "Desarrollo de API RESTful"
-      ]
+        "Implementé un sistema de estimación de energía eólica consumiendo la API externa Open Meteo con Python y Django.",
+        "Desarrollé un pipeline ETL automatizado con consultas geoespaciales, usando NumPy y Pandas para análisis estadístico.",
+        "Arquitecturé una API RESTful con Django REST Framework para estimaciones en tiempo real con persistencia via Django ORM.",
+        "Implementé módulo de visualización de datos con Matplotlib y Seaborn para reportes de producción energética."
+      ],
+      "tags": ["Python", "Django", "REST", "NumPy", "Pandas", "PostgreSQL"]
     },
     {
       "name": "SICOFAR-K",
-      "position": "Ingeniero de Software - Diseñador del Sistema",
+      "position": "Ingeniero de Software",
       "url": "",
       "startDate": "Ene 2024",
       "endDate": "Actualidad",
-      "summary": "Lideré el diseño integral de un sistema web para la gestión de residuos plásticos, realizando el análisis y especificación de requisitos según la norma ISO/IEC/IEEE 29148-2011, definiendo requisitos funcionales y no funcionales que garantizan la trazabilidad completa desde la recolección hasta la comercialización. Desarrollé la arquitectura del sistema basada en patrón MVC y arquitectura por capas, documentando mediante diagramas UML (casos de uso, clases, componentes, secuencia y despliegue) los módulos de control de residuos, procesamiento y facturación automatizada. Diseñé el modelo de datos mediante diagramas entidad-relación normalizados y elaboré prototipos de interfaces de media fidelidad, optimizando los flujos de interacción para el registro de material, control de procesamiento y generación automática de facturas. Establecí criterios de validación del diseño aplicando la norma IEEE 29119-3 para pruebas de software y métricas de calidad alineadas con ISO/IEC 25010, evaluando usabilidad, rendimiento, seguridad y escalabilidad. Documenté integralmente el proyecto incluyendo especificación de requisitos, diagramas arquitectónicos, modelo de datos y matriz de trazabilidad, garantizando una base técnica sólida para la fase de implementación.",
+      "summary": "",
       "highlights": [
-        "Implementación de soluciones backend con Spring Boot",
-        "ISO/IEC/IEEE 29148-2011 (Ingeniería de Requisitos)",
-        "Diseño de Arquitectura MVC y UML",
-        "Modelado de Datos y Prototipado de Interfaces",
-        "Norma IEEE 29119-3 y ISO/IEC 25010 (Pruebas y Calidad de Software)"
-      ]
+        "Lideré el análisis y especificación de requisitos bajo ISO/IEC/IEEE 29148-2011 para un sistema de gestión de residuos plásticos.",
+        "Diseñé la arquitectura MVC por capas documentada con diagramas UML completos (casos de uso, clases, secuencia y despliegue).",
+        "Modelé la base de datos mediante diagramas E-R normalizados y elaboré prototipos de media fidelidad.",
+        "Establecí criterios de calidad aplicando IEEE 29119-3 e ISO/IEC 25010 evaluando usabilidad, seguridad y escalabilidad."
+      ],
+      "tags": ["Java", "Spring Boot", "UML", "PostgreSQL", "ISO/IEC 25010", "Docker"]
     },
     {
-      "name": "Ingeniero de Software Backend - Ecosistema Java",
+      "name": "Ecosistema Java - Spring",
       "position": "Ingeniero de Software",
       "url": "https://github.com/jnavarrop26",
       "startDate": "Ene 2022",
       "endDate": "Actualidad",
-      "summary": " Mi experiencia en el desarrollo con Java y el ecosistema Spring se extiende al diseño e implementación de APIs utilizando diversos paradigmas. He creado APIs RESTful usando Spring Web y Spring MVC, he implementado endpoints GraphQL con librerías como Spring GraphQL, y he trabajado con servicios SOAP a través de Spring WS para la interoperabilidad con sistemas existentes. Adicionalmente, he integrado capacidades de inteligencia artificial en aplicaciones pequenas utilizando Spring AI,  Consciente de la demanda de comunicaciones de alto rendimiento en arquitecturas modernas, actualmente estoy explorando activamente la integración de gRPC con Spring para construir servicios de interconexión aún más eficientes y escalables dentro del ecosistema Java.",
+      "summary": "",
       "highlights": [
-        "Java",
-        "Spring Boot",
-        "Spring Data JPA",
-        "Hibernate",
-        "Spring MVC",
-        "Spring AI",
-        "Maven",
-        "Bash Scripting",
-        "APIs RESTful, GraphQL y SOAP",
-        "Exploración de gRPC con Spring",
-        "PSQL - PostgreSQL",
-        "Docker",
-        "GIT"
-
-      ]
+        "Diseño e implemento APIs REST, GraphQL y SOAP usando Spring Web, Spring GraphQL y Spring WS.",
+        "Integro capacidades de inteligencia artificial en aplicaciones backend utilizando Spring AI.",
+        "Consumo servicios externos e integré sistemas legados mediante SOAP y contratos WSDL.",
+        "Explorando gRPC con Spring para comunicación eficiente entre microservicios de alto rendimiento."
+      ],
+      "tags": ["Java", "Spring Boot", "Spring AI", "GraphQL", "SOAP", "gRPC", "Docker"]
     }
   ],
   "volunteer": [],
@@ -120,105 +117,60 @@
     }
   ],
   "awards": [],
-  "certificates": [],
-  "publications": [],
+  "certificates": [
+    {
+      "name": "Fundamentos en Analítica de Datos",
+      "issuer": "DS4A / Colombia",
+      "date": "dic. 2022",
+      "url": "",
+      "credentialId": "",
+      "highlights": ["Analítica de Datos", "Python", "Estadística", "Visualización de Datos"]
+    },
+    {
+      "name": "IA, ML y Analítica Avanzada",
+      "issuer": "Cámara de Comercio de Bogotá & CYMETRIA",
+      "date": "ene. 2026",
+      "url": "",
+      "credentialId": "",
+      "highlights": ["Inteligencia Artificial", "SQL", "Machine Learning", "Analítica Avanzada", "Python", "Venta Consultiva"]
+    },
+    {
+      "name": "Arquitectura en la Nube",
+      "issuer": "CYMETRIA",
+      "date": "ago. 2024",
+      "url": "",
+      "credentialId": "",
+      "highlights": ["AWS", "Docker", "Amazon EC2", "Amazon S3", "Amazon RDS", "AWS Lambda", "API Gateway", "Amazon DynamoDB", "AWS CloudFormation", "Amazon CloudFront", "Amazon VPC", "CloudWatch", "IAM", "CI/CD", "AWS CodePipeline"]
+    }
+  ],
+  "publications": [
+    {
+      "name": "REST API Best Practices for Backend Developers",
+      "type": "article",
+      "publisher": "Personal Blog",
+      "releaseDate": "2025-05-01",
+      "url": "",
+      "summary": "Exploración de los principios y patrones más importantes para diseñar APIs REST escalables, mantenibles y seguras, con ejemplos prácticos en Java Spring Boot.",
+      "tags": ["REST", "Spring Boot", "Backend", "API Design"]
+    },
+    {
+      "name": "Software Architecture Patterns in Modern Web Applications",
+      "type": "paper",
+      "publisher": "Universidad Central",
+      "releaseDate": "2025-03-15",
+      "url": "",
+      "summary": "Análisis comparativo de arquitecturas monolíticas y de microservicios en aplicaciones web modernas, evaluando escalabilidad, mantenibilidad y complejidad de desarrollo.",
+      "tags": ["Architecture", "Microservices", "Monolith", "Distributed Systems"]
+    }
+  ],
   "skills": [
-  {
-    "name": "Java",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Python",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "JavaScript",
-    "level": "Entry",
-    "category": "Front End Development"
-  },
-  {
-    "name": "HTML",
-    "level": "Entry",
-    "category": "Front End Development"
-  },
-  {
-    "name": "CSS",
-    "level": "Entry",
-    "category": "Front End Development"
-  },
-  {
-    "name": "SQL",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "PSQL - PostgreSQL",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Spring Boot",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Spring Data JPA",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Hibernate",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Spring AI",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Spring MVC",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Django",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "React",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Docker",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "GIT",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "AWS",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "PostMan",
-    "level": "Entry",
-    "category": "Backend Development"
-  },
-  {
-    "name": "Maven",
-    "level": "Entry",
-    "category": "Backend Development"
-  }
-],
+    "Java", "Python", "TypeScript",
+    "Spring Boot", "Spring Security", "Spring Cloud", "Spring AI",
+    "Django", "Hibernate",
+    "REST", "GraphQL", "gRPC",
+    "PostgreSQL", "Docker", "Kafka", "GCP", "Keycloak",
+    "Git", "Maven", "UML", "Agile"
+  ],
   "languages": [
     {
       "language": "Spanish",
@@ -246,14 +198,25 @@
   "references": [],
   "projects": [
     {
-      "name": "Proyectos Empíricos",
+      "name": "SICOFAR-K",
+      "isActive": true,
+      "startDate": "Ene 2024",
+      "endDate": "Actualidad",
+      "description": "Sistema web para la gestión integral de residuos plásticos — trazabilidad completa desde la recolección hasta la comercialización, con facturación automatizada.",
+      "highlights": [
+        "Java", "Spring Boot", "UML", "RUP", "ISO/IEC/IEEE 29148", "PostgreSQL", "Docker", "TypeScript", "React", "Git","API Rest"
+      ],
+      "url": "",
+      "github": "https://github.com/jnavarrop26"
+    },
+    {
+      "name": "Java",
       "isActive": true,
       "startDate": "",
       "endDate": "",
-      "description": "Desarrollo de soluciones backend utilizando el ecosistema Spring.",
+      "description": "Desarrollo de soluciones backend utilizando el ecosistema Java SpringFramework.",
       "highlights": [
-        "Implementación de soluciones con Spring Boot",
-        "Optimización de procesos en Java"
+        "Spring Framework", "Java", "Maven", "Gradle", "TypeScript", "Bun", "Rest", "PostgreSQL", "Docker", "TCP/IP", "DHCP", "HTTP", "Kafka", "Microservicios", "Angular", "MCP", "Git", "Maven", "Aws", "Diseno de Sistemas", ""
       ],
       "url": "https://github.com/jnavarrop26",
       "github": "https://github.com/jnavarrop26?tab=repositories"

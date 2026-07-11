@@ -1,0 +1,130 @@
+---
+import Section from "../Section.astro";
+import { certificates } from "cv.json";
+---
+
+<Section title="Certificaciones">
+  <ul>
+    {certificates.map(({ name, issuer, date, url, credentialId, highlights }) => (
+      <li>
+        <article>
+          <header>
+            <div class="info">
+              <h3>{name}</h3>
+              <span class="issuer">
+                {url
+                  ? <a href={url} target="_blank" rel="noopener noreferrer">{issuer}</a>
+                  : issuer
+                }
+              </span>
+            </div>
+            <time>{date}</time>
+          </header>
+
+          {credentialId && (
+            <p class="credential">ID: {credentialId}</p>
+          )}
+          {highlights && highlights.length > 0 && (
+            <footer>
+              {highlights.map((h) => <span>{h}</span>)}
+            </footer>
+          )}
+        </article>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-inline: -16px;
+  }
+
+  article {
+    margin-inline: 0;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+    font-family: system-ui, sans-serif;
+  }
+
+  .issuer {
+    font-size: 0.78rem;
+    color: #666;
+  }
+
+  .issuer a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .issuer a:hover {
+    text-decoration: underline;
+    color: #111;
+  }
+
+  time {
+    font-size: 0.78rem;
+    color: #999;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .credential {
+    font-size: 0.7rem;
+    color: #aaa;
+    margin: 0;
+    font-family: "Courier New", monospace;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 12px;
+    margin-top: 6px;
+  }
+
+  footer span {
+    color: #888;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 700px) {
+    header {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+</style>

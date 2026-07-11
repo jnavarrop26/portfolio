@@ -1,0 +1,49 @@
+---
+interface Props {
+  badges: string[];
+  class?: string;
+}
+
+const { badges, class: className = "" } = Astro.props;
+if (badges.length === 0) return;
+---
+
+<ul class:list={["badge-list", className]} aria-label="Technologies used">
+  {badges.map((badge) => (
+    <li>
+      <span class="badge">{badge}</span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .badge-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    background: #eaeaea;
+    color: #333;
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  @media print {
+    .badge {
+      font-size: 8px;
+      padding: 1px 4px;
+      line-height: 1.2;
+    }
+  }
+</style>

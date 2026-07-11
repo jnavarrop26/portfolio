@@ -8,39 +8,31 @@ import { projects } from "cv.json";
   <ul>
     {
       projects.map(
-        ({ url, description, highlights, name, isActive, github }) => {
+        ({ url, description, highlights, name, isActive, github }, index) => {
+          const featured = index === 0;
           return (
-            <li>
+            <li class:list={[{ featured }]}>
               <article>
                 <header>
-                  <h3>
-                    <a
-                      href={url}
-                      target="_blank"
-                      title={`Ver el proyecto ${name}`}
-                    >
-                      {name}
-                    </a>
-                   
+                  <div class="title-row">
+                    <h3>
+                      {url
+                        ? <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>{name}</a>
+                        : <span>{name}</span>
+                      }
+                    </h3>
+                    {featured && <span class="badge-featured">Destacado</span>}
                     {github && (
-                      <a
-                        class="github-code-link"
-                        href={github}
-                        target="_blank"
-                        title={`Ver código fuente del proyecto ${name}`}
-                      >
-                        
+                      <a class="github-code-link" href={github} target="_blank" title={`Ver código fuente`}>
                         <GitHub />
                         {isActive && <span class="active-symbol">&bull;</span>}
                       </a>
                     )}
-                  </h3>
+                  </div>
                   <p>{description}</p>
                 </header>
                 <footer>
-                  {highlights.map((highlight) => {
-                    return <span>{highlight}</span>;
-                  })}
+                  {highlights.map((highlight) => <span>{highlight}</span>)}
                 </footer>
               </article>
             </li>
@@ -54,7 +46,7 @@ import { projects } from "cv.json";
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-inline: -16px;
   }
@@ -73,8 +65,38 @@ import { projects } from "cv.json";
     flex: 1;
   }
 
-  article h3 {
+  .title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .badge-featured {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: #111;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  li.featured article h3 span,
+  li.featured article h3 a {
+    color: #000;
+    font-weight: 700;
+  }
+
+  li.featured article {
+    border-color: #ddd;
+    background: #fafafa;
+  }
+
+  article h3 {
+    margin: 0;
   }
 
   article a {
@@ -91,7 +113,7 @@ import { projects } from "cv.json";
     margin-bottom: 4px;
   }
 
-  article h3 span {
+  .active-symbol {
     color: rgb(0, 188, 47);
     animation-name: flicker;
     animation-duration: 3s;
@@ -103,16 +125,16 @@ import { projects } from "cv.json";
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    font-size: 0.6rem;
+    margin-top: 4px;
   }
 
   footer span {
-    border-radius: 6px;
-    background: #eee;
-    color: #444;
-    font-size: 0.6rem;
+    background: #eaeaea;
+    color: #333;
+    font-size: 0.68rem;
     font-weight: 500;
-    padding: 0.2rem 0.6rem;
+    padding: 2px 8px;
+    border-radius: 20px;
   }
 
   .github-code-link {
@@ -133,6 +155,7 @@ import { projects } from "cv.json";
 
   @media (width <= 700px) {
     ul {
+      grid-template-columns: 1fr;
       margin-inline: 0px;
     }
 

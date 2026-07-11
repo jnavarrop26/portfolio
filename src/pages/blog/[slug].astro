@@ -1,0 +1,285 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const publications = await getCollection("publications", ({ data }) => !data.draft);
+  return publications.map((pub) => ({
+    params: { slug: pub.id },
+    props: { pub },
+  }));
+}
+
+interface Props {
+  pub: CollectionEntry<"publications">;
+}
+
+const { pub } = Astro.props;
+const { Content } = await render(pub);
+
+const typeLabel: Record<string, string> = {
+  article: "Artículo",
+  paper: "Paper",
+};
+
+const formattedDate = new Date(pub.data.publishedAt).toLocaleDateString("es-CO", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={`${pub.data.title} — Jose Navarro`}>
+  <main>
+    <nav>
+      <a href="/blog" class="back-link">← Todas las publicaciones</a>
+    </nav>
+
+    <article>
+      <header>
+        <div class="pub-meta">
+          <span class={`pub-badge pub-badge--${pub.data.type}`}>
+            {typeLabel[pub.data.type]}
+          </span>
+          <time datetime={pub.data.publishedAt}>{formattedDate}</time>
+        </div>
+
+        <h1>{pub.data.title}</h1>
+        <p class="summary">{pub.data.summary}</p>
+
+        <div class="tags">
+          {pub.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+
+        <hr />
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <footer>
+        <a href="/blog" class="back-link">← Todas las publicaciones</a>
+      </footer>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  nav {
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: #111;
+  }
+
+  article header {
+    margin-bottom: 2rem;
+  }
+
+  .pub-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .pub-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+
+  .pub-badge--article {
+    background: #e8f4fd;
+    color: #1a73e8;
+  }
+
+  .pub-badge--paper {
+    background: #f0f4ff;
+    color: #4f46e5;
+  }
+
+  time {
+    font-size: 0.78rem;
+    color: #999;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    font-family: system-ui, sans-serif;
+    color: #111;
+  }
+
+  .summary {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  .tags span {
+    background: #f2f2f2;
+    color: #444;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 6px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #f2f2f2;
+  }
+
+  /* ── Prose styles para el contenido Markdown ── */
+  .prose {
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: #111;
+    font-family: system-ui, sans-serif;
+  }
+
+  .prose :global(h3) {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+    color: #222;
+    font-family: system-ui, sans-serif;
+  }
+
+  .prose :global(p) {
+    margin: 0 0 1rem;
+    color: #444;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.3rem;
+    color: #444;
+    font-size: 0.9rem;
+  }
+
+  .prose :global(code) {
+    background: #f5f5f5;
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-size: 0.85em;
+    color: #d63031;
+  }
+
+  .prose :global(pre) {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .prose :global(pre code) {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  .prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0;
+    font-size: 0.85rem;
+  }
+
+  .prose :global(th) {
+    background: #f5f5f5;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 12px;
+    border: 1px solid #e8e8e8;
+    color: #111;
+    font-family: system-ui, sans-serif;
+  }
+
+  .prose :global(td) {
+    padding: 8px 12px;
+    border: 1px solid #e8e8e8;
+    color: #444;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid #ddd;
+    padding-left: 1rem;
+    color: #666;
+    font-style: italic;
+    margin: 1.25rem 0;
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid #f2f2f2;
+    margin: 2rem 0;
+  }
+
+  .prose :global(a) {
+    color: #1a73e8;
+    text-decoration: underline;
+  }
+
+  article footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f2f2f2;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+</style>

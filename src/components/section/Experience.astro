@@ -1,5 +1,6 @@
 ---
 import Section from "@/components/Section.astro";
+import BadgeList from "@/components/BadgeList.astro";
 import { work } from "cv.json";
 ---
 
@@ -7,7 +8,7 @@ import { work } from "cv.json";
   <ul>
     {
       work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
+        ({ name, startDate, endDate, position, summary, highlights, url, tags }) => {
           return (
             <li>
               <article>
@@ -32,10 +33,13 @@ import { work } from "cv.json";
                 </header>
 
                 <footer>
-                  <p>{summary}</p>
-                  {highlights.map((highlight) => {
-                    return <span>{highlight}</span>;
-                  })}
+                  {summary && <p>{summary}</p>}
+                  {highlights.length > 0 && (
+                    <ul class="bullets">
+                      {highlights.map((item) => <li>{item}</li>)}
+                    </ul>
+                  )}
+                  {tags && tags.length > 0 && <BadgeList badges={tags} />}
                 </footer>
               </article>
             </li>
@@ -54,6 +58,21 @@ import { work } from "cv.json";
     gap: 32px;
   }
 
+
+  .title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .position-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+  }
 
   article h3 {
     font-weight: 500;
@@ -89,18 +108,22 @@ import { work } from "cv.json";
   }
 
   footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    font-size: 0.6rem;
+    margin-top: 6px;
   }
 
-  footer span {
-    border-radius: 6px;
-    background: #ffffff;
-    color: #414652;
-    font-size: 0.6rem;
-    font-weight: 500;
+  .bullets {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .bullets li {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.5;
   }
 
 

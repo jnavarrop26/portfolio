@@ -4,9 +4,11 @@ import About from '@/components/section/About.astro';
 import Education from '@/components/section/Education.astro';
 import Experience from '@/components/section/Experience.astro';
 import Hero from '@/components/section/Hero.astro';
+import Certifications from '@/components/section/Certifications.astro';
 import Projects from '@/components/section/Projects.astro';
 import Skills from '@/components/section/Skills.astro';
 import KeyboardManager from '@/components/KeyboardManager.astro';
+import NavBar from '@/components/NavBar.astro';
 import { basics } from 'cv.json';
 const { name, label } = basics;
 
@@ -14,13 +16,15 @@ const { name, label } = basics;
 ---
 
 <Layout title=`Portafolio de ${name} - ${label}`>
+	<NavBar />
 	<main>
-		 <Hero />
-		 <About />			
-		 <Experience />
-		 <Education />
-		 <Projects />
-		 <Skills />
+		<Hero />
+		<div id="about">    <About />     </div>
+		<div id="experience"><Experience /></div>
+		<div id="education">       <Education />       </div>
+		<div id="certifications">  <Certifications />  </div>
+		<div id="projects">        <Projects />        </div>
+		<div id="skills">    <Skills />    </div>
 	</main>
 	<KeyboardManager/>
 </Layout>
@@ -31,6 +35,12 @@ main {
     padding: 4rem;
     margin: auto;
     width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    main {
+      padding: 1.5rem 1rem;
+    }
   }
 
 

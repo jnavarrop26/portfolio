@@ -1,12 +1,15 @@
 
 #VScode config
 .vscode/
+.vscode
 
 # build output
 dist/
 
 # generated types
 .astro/
+.claude/
+.vercel/
 
 
 # dependencies
@@ -27,3 +30,5 @@ pnpm-debug.log*
 
 # local folders
 .history
+.vercel
+.env*
