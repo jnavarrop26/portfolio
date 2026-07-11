@@ -13,7 +13,6 @@ const typeLabel: Record<string, string> = {
   <ul>
     {
       publications.map(({ name, type, publisher, releaseDate, url, summary, tags }) => {
-        const year = releaseDate ? new Date(releaseDate).getFullYear() : null;
         const formattedDate = releaseDate
           ? new Date(releaseDate).toLocaleDateString("es-CO", {
               year: "numeric",
