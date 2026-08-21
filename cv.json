@@ -1,18 +1,18 @@
 {
   "basics": {
     "name": "Jose Navarro",
-    "label": "Software Engineering - Microsoft Student Ambassadors - AI and Quantum Computing Enthusiast",
+    "label": "Systems Engineering Student — Backend Engineering (Java/Spring) - Microsoft Student Ambassadors",
     "image": "/profile-photo.webp",
     "email": "antonionp26@gmail.com",
     "phone": "+57 3195398968",
     "url": "https://github.com/jnavarrop26",
-    "summary": "Ingeniero de Software Backend especializado en Java y el ecosistema Spring. Diseño e implemento sistemas distribuidos — desde la arquitectura y especificación  de requisitos hasta el consumo de servicios externos, integración de APIs   y comunicación asíncrona con Kafka. Experiencia desplegando en GCP, asegurando identidad con Keycloak y aplicando principios SOLID, patrones  de diseño y estándares ISO/IEC en proyectos reales. Actualmente explorando  Spring AI y gRPC para sistemas de alto rendimiento.",
+    "summary": "Estudiante de Ingeniería de Sistemas con más de 3 años de experiencia desarrollando software backend en Java y el ecosistema Spring. Diseño e implemento sistemas distribuidos — desde la arquitectura y especificación de requisitos hasta el consumo de servicios externos, integración de APIs y comunicación asíncrona con Kafka. Experiencia desplegando en AWS, asegurando identidad con Keycloak y aplicando principios SOLID, patrones de diseño y estándares ISO/IEC en proyectos reales. Actualmente explorando Spring AI y gRPC para sistemas de alto rendimiento.",
     "location": {
       "address": "Bogotá D.C",
       "postalCode": "",
       "city": "Bogotá D.C",
       "countryCode": "CO",
-      "region": "Colombia"
+      "region": "Cundinamarca"
     },
     "profiles": [
       {
@@ -24,11 +24,6 @@
         "network": "GitHub",
         "username": "jnavarrop26",
         "url": "https://github.com/jnavarrop26"
-      },
-      {
-        "network": "DevTo",
-        "username": "janp",
-        "url": "https://dev.to/janp"
       }
     ]
   },
@@ -37,7 +32,7 @@
       "name": "Parsons - Kinetics",
       "position": "Desarrollador Backend",
       "url": "https://parsonskinetics.com/",
-      "startDate": "Feb 2024 ",
+      "startDate": "Feb 2024",
       "endDate": "Nov 2024",
       "summary": "",
       "highlights": [
@@ -46,37 +41,61 @@
         "Arquitecturé una API RESTful con Django REST Framework para estimaciones en tiempo real con persistencia via Django ORM.",
         "Implementé módulo de visualización de datos con Matplotlib y Seaborn para reportes de producción energética."
       ],
-      "tags": ["Python", "Django", "REST", "NumPy", "Pandas", "PostgreSQL"]
+      "tags": [
+        "Python",
+        "Django",
+        "REST",
+        "NumPy",
+        "Pandas",
+        "SQLite"
+      ]
     },
     {
-      "name": "SICOFAR-K",
-      "position": "Ingeniero de Software",
+      "name": "RecyOps",
+      "position": "Ingeniero de Sistemas",
       "url": "",
       "startDate": "Ene 2024",
       "endDate": "Actualidad",
-      "summary": "",
+      "summary": "Sistema de gestión de residuos plásticos con backend multi-tenant en Spring Boot, desde la especificación de requisitos hasta la implementación en producción.",
       "highlights": [
-        "Lideré el análisis y especificación de requisitos bajo ISO/IEC/IEEE 29148-2011 para un sistema de gestión de residuos plásticos.",
-        "Diseñé la arquitectura MVC por capas documentada con diagramas UML completos (casos de uso, clases, secuencia y despliegue).",
-        "Modelé la base de datos mediante diagramas E-R normalizados y elaboré prototipos de media fidelidad.",
-        "Establecí criterios de calidad aplicando IEEE 29119-3 e ISO/IEC 25010 evaluando usabilidad, seguridad y escalabilidad."
+        "Desarrollé el backend multi-tenant en Spring Boot 3 con aislamiento de datos por esquema en PostgreSQL (Hibernate + Flyway), permitiendo onboarding automático de nuevas empresas.",
+        "Implementé autenticación y autorización con JWT (OAuth2/Supabase) y control de acceso basado en roles.",
+        "Construí la suite de pruebas unitarias de la capa de servicio  con JUnit 5 y Mockito, midiendo cobertura con JaCoCo.",
+        "Establecí observabilidad del sistema con Prometheus/Grafana y logging asíncrono (Log4j2) para trazabilidad de operaciones de negocio.",
+        "Lideré el análisis de requisitos (ISO/IEC/IEEE 29148) y el diseño de arquitectura (UML, modelo E-R) aplicando criterios de calidad de ISO/IEC 25010 e IEEE 29119-3."
       ],
-      "tags": ["Java", "Spring Boot", "UML", "PostgreSQL", "ISO/IEC 25010", "Docker"]
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "PostgreSQL",
+        "Flyway",
+        "JUnit",
+        "Mockito",
+        "Docker",
+        "JWT/OAuth2",
+        "Prometheus/Grafana"
+      ]
     },
     {
-      "name": "Ecosistema Java - Spring",
-      "position": "Ingeniero de Software",
+      "name": "Ecosistema Java - SpringFramework",
+      "position": "Ingeniero de Sistemas",
       "url": "https://github.com/jnavarrop26",
       "startDate": "Ene 2022",
       "endDate": "Actualidad",
       "summary": "",
       "highlights": [
-        "Diseño e implemento APIs REST, GraphQL y SOAP usando Spring Web, Spring GraphQL y Spring WS.",
-        "Integro capacidades de inteligencia artificial en aplicaciones backend utilizando Spring AI.",
-        "Consumo servicios externos e integré sistemas legados mediante SOAP y contratos WSDL.",
-        "Explorando gRPC con Spring para comunicación eficiente entre microservicios de alto rendimiento."
+          "Diseñé e implementé APIs REST, GraphQL y SOAP con Spring Web, Spring GraphQL y Spring WS, exponiendo servicios backend a múltiples clientes. Integré capacidades de IA en aplicaciones backend mediante Spring AI.   Integré sistemas legados y consumí servicios externos vía SOAP y contratos WSDL.Prototipé comunicación de alto rendimiento entre microservicios usando  gRPC con Spring.Utilicé el AWS SDK for Java para integrar almacenamiento (S3),mensajería asíncrona (SQS/SNS) y cómputo (Lambda, EC2) en aplicaciones backend."
       ],
-      "tags": ["Java", "Spring Boot", "Spring AI", "GraphQL", "SOAP", "gRPC", "Docker"]
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "Spring AI",
+        "GraphQL",
+        "SOAP",
+        "gRPC",
+        "Docker"
+      ]
     }
   ],
   "volunteer": [],
@@ -124,7 +143,12 @@
       "date": "dic. 2022",
       "url": "",
       "credentialId": "",
-      "highlights": ["Analítica de Datos", "Python", "Estadística", "Visualización de Datos"]
+      "highlights": [
+        "Analítica de Datos",
+        "Python",
+        "Estadística",
+        "Visualización de Datos"
+      ]
     },
     {
       "name": "IA, ML y Analítica Avanzada",
@@ -132,7 +156,14 @@
       "date": "ene. 2026",
       "url": "",
       "credentialId": "",
-      "highlights": ["Inteligencia Artificial", "SQL", "Machine Learning", "Analítica Avanzada", "Python", "Venta Consultiva"]
+      "highlights": [
+        "Inteligencia Artificial",
+        "SQL",
+        "Machine Learning",
+        "Analítica Avanzada",
+        "Python",
+        "Venta Consultiva"
+      ]
     },
     {
       "name": "Arquitectura en la Nube",
@@ -140,7 +171,23 @@
       "date": "ago. 2024",
       "url": "",
       "credentialId": "",
-      "highlights": ["AWS", "Docker", "Amazon EC2", "Amazon S3", "Amazon RDS", "AWS Lambda", "API Gateway", "Amazon DynamoDB", "AWS CloudFormation", "Amazon CloudFront", "Amazon VPC", "CloudWatch", "IAM", "CI/CD", "AWS CodePipeline"]
+      "highlights": [
+        "AWS",
+        "Docker",
+        "Amazon EC2",
+        "Amazon S3",
+        "Amazon RDS",
+        "AWS Lambda",
+        "API Gateway",
+        "Amazon DynamoDB",
+        "AWS CloudFormation",
+        "Amazon CloudFront",
+        "Amazon VPC",
+        "CloudWatch",
+        "IAM",
+        "CI/CD",
+        "AWS CodePipeline"
+      ]
     }
   ],
   "publications": [
@@ -151,7 +198,12 @@
       "releaseDate": "2025-05-01",
       "url": "",
       "summary": "Exploración de los principios y patrones más importantes para diseñar APIs REST escalables, mantenibles y seguras, con ejemplos prácticos en Java Spring Boot.",
-      "tags": ["REST", "Spring Boot", "Backend", "API Design"]
+      "tags": [
+        "REST",
+        "Spring Boot",
+        "Backend",
+        "API Design"
+      ]
     },
     {
       "name": "Software Architecture Patterns in Modern Web Applications",
@@ -160,16 +212,36 @@
       "releaseDate": "2025-03-15",
       "url": "",
       "summary": "Análisis comparativo de arquitecturas monolíticas y de microservicios en aplicaciones web modernas, evaluando escalabilidad, mantenibilidad y complejidad de desarrollo.",
-      "tags": ["Architecture", "Microservices", "Monolith", "Distributed Systems"]
+      "tags": [
+        "Architecture",
+        "Microservices",
+        "Monolith",
+        "Distributed Systems"
+      ]
     }
   ],
   "skills": [
-    "Java", "Python", "TypeScript",
-    "Spring Boot", "Spring Security", "Spring Cloud", "Spring AI",
-    "Django", "Hibernate",
-    "REST", "GraphQL", "gRPC",
-    "PostgreSQL", "Docker", "Kafka", "GCP", "Keycloak",
-    "Git", "Maven", "UML", "Agile"
+    "Java",
+    "Python",
+    "TypeScript",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Cloud",
+    "Spring AI",
+    "Django",
+    "Hibernate",
+    "REST",
+    "GraphQL",
+    "gRPC",
+    "PostgreSQL",
+    "Docker",
+    "Kafka",
+    "AWS",
+    "Keycloak",
+    "Git",
+    "Maven",
+    "UML",
+    "Agile"
   ],
   "languages": [
     {
@@ -191,20 +263,37 @@
         "Scalable Systems",
         "Distributed Systems",
         "Networking Protocols"
-        
       ]
     }
   ],
   "references": [],
   "projects": [
     {
-      "name": "SICOFAR-K",
+      "name": "RecyOps",
       "isActive": true,
       "startDate": "Ene 2024",
       "endDate": "Actualidad",
       "description": "Sistema web para la gestión integral de residuos plásticos — trazabilidad completa desde la recolección hasta la comercialización, con facturación automatizada.",
       "highlights": [
-        "Java", "Spring Boot", "UML", "RUP", "ISO/IEC/IEEE 29148", "PostgreSQL", "Docker", "TypeScript", "React", "Git","API Rest"
+        "Java",
+        "Maven",
+        "Spring Boot",
+        "Spring Security",
+        "Actuator",
+        "Prometheus",
+        "UML",
+        "RUP",
+        "ISO/IEC/IEEE 29148",
+        "PostgreSQL",
+        "Docker",
+        "TypeScript",
+        "React",
+        "Git",
+        "API Rest",
+        "Bun",
+        "Grafana",
+        "SupaBase",
+        "JWT"
       ],
       "url": "",
       "github": "https://github.com/jnavarrop26"
@@ -214,9 +303,27 @@
       "isActive": true,
       "startDate": "",
       "endDate": "",
-      "description": "Desarrollo de soluciones backend utilizando el ecosistema Java SpringFramework.",
+      "description": "Diseño e implementación de arquitecturas backend robustas con Java y Spring Framework, aplicando buenas prácticas de ingeniería de software, patrones de diseño y principios de sistemas distribuidos.",
       "highlights": [
-        "Spring Framework", "Java", "Maven", "Gradle", "TypeScript", "Bun", "Rest", "PostgreSQL", "Docker", "TCP/IP", "DHCP", "HTTP", "Kafka", "Microservicios", "Angular", "MCP", "Git", "Maven", "Aws", "Diseno de Sistemas", ""
+        "Spring Framework",
+        "Java",
+        "Maven",
+        "Gradle",
+        "TypeScript",
+        "Bun",
+        "Rest",
+        "PostgreSQL",
+        "Docker",
+        "TCP/IP",
+        "DHCP",
+        "HTTP",
+        "Kafka",
+        "Microservicios",
+        "Angular",
+        "MCP",
+        "Git",
+        "AWS",
+        "Diseño de Sistemas"
       ],
       "url": "https://github.com/jnavarrop26",
       "github": "https://github.com/jnavarrop26?tab=repositories"

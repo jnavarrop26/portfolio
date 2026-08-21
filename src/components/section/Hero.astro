@@ -5,7 +5,6 @@ import Phone from "@/icons/Phone.astro";
 import X from "@/icons/X.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
 import GitHub from "@/icons/GitHub.astro";
-import DevTo  from "@/icons/DevTo.astro";
 import WorldMap from "@/icons/WorldMap.astro";
 import PublicationIcon from "@/icons/icon-publication.astro";
 import Section from "@/components/Section.astro";
@@ -17,13 +16,13 @@ const SOCIAL_ICONS: Record<string, any> = {
   GitHub,
   LinkedIn,
   X,
-  DevTo,
 };
 
-const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
-const linkedUrl = linkedInfo?.url
-
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const printInfo = [
+  email,
+  phone,
+  ...profiles.map(({ network, url }) => `${network}: ${url}`),
+].filter(Boolean)
 ---
 
 <Section>
@@ -38,7 +37,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
         {city}, {region}
       </span>
       <footer class="print">
-        {printInfo}
+        {printInfo.map((item) => <span>{item}</span>)}
       </footer>
       <footer class="no-print">
         {
@@ -154,6 +153,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     display: flex;
     gap: 4px;
     margin-top: 8px;
+  }
+
+  footer.print {
+    flex-wrap: wrap;
+  }
+
+  footer.print span:not(:last-child)::after {
+    content: " • ";
   }
 
   footer a {
