@@ -1,10 +1,16 @@
 ---
 import Section from "@/components/Section.astro";
 import BadgeList from "@/components/BadgeList.astro";
-import { work } from "cv.json";
+import { work as workEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const work = lang === "en" ? cvEn.work : workEs;
+const t = ui[lang];
 ---
 
-<Section title="Experiencia laboral">
+<Section title={t.section.experience}>
   <ul>
     {
       work.map(
@@ -15,19 +21,19 @@ import { work } from "cv.json";
                 <header>
                   <div>
                     <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
+                      <a href={url} title={t.fmt.viewWorkTitle(name)} target="_blank">
                         {name}
                       </a>
                     </h3>
                     <h4>{position}</h4>
                   </div>
                 <div class="date-container">
-                    <time datetime={startDate}  data-title={startDate}> 
+                    <time datetime={startDate}  data-title={startDate}>
                     {startDate} {" - "}
                     </time>
-                    
-                    <time datetime={endDate !== "Actual" ? endDate : new Date().toISOString().split('T')[0]} data-title={endDate}>
-                    {endDate !== "Actual" ? endDate : "Actual"}
+
+                    <time datetime={endDate} data-title={endDate}>
+                    {endDate}
                     </time>
                 </div>
                 </header>

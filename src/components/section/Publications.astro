@@ -1,20 +1,26 @@
 ---
 import Section from "../Section.astro";
 import PublicationIcon from "@/icons/icon-publication.astro";
-import { publications } from "cv.json";
+import { publications as publicationsEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const publications = lang === "en" ? cvEn.publications : publicationsEs;
+const t = ui[lang];
 
 const typeLabel: Record<string, string> = {
-  article: "Artículo",
-  paper: "Paper",
+  article: t.misc.article,
+  paper: t.misc.paper,
 };
 ---
 
-<Section title="Publicaciones">
+<Section title={t.section.publications}>
   <ul>
     {
       publications.map(({ name, type, publisher, releaseDate, url, summary, tags }) => {
         const formattedDate = releaseDate
-          ? new Date(releaseDate).toLocaleDateString("es-CO", {
+          ? new Date(releaseDate).toLocaleDateString(t.misc.dateLocale, {
               year: "numeric",
               month: "short",
             })
@@ -36,7 +42,7 @@ const typeLabel: Record<string, string> = {
 
                 <h3>
                   {url ? (
-                    <a href={url} target="_blank" rel="noopener noreferrer" title={`Leer: ${name}`}>
+                    <a href={url} target="_blank" rel="noopener noreferrer" title={t.fmt.readPublicationTitle(name)}>
                       {name}
                     </a>
                   ) : (
@@ -165,15 +171,20 @@ const typeLabel: Record<string, string> = {
   footer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4px;
   }
 
   footer span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6px;
     background: #eee;
     color: #444;
     font-size: 0.6rem;
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
     padding: 0.2rem 0.6rem;
   }
 

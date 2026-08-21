@@ -1,12 +1,16 @@
 ---
 import Section from "@/components/Section.astro";
-import { basics } from "cv.json";
+import { basics as basicsEs } from "cv.json";
+import basicsEnData from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
 
-const { summary } = basics;
+const lang = getLang(Astro.currentLocale);
+const { summary } = lang === "en" ? basicsEnData.basics : basicsEs;
+const t = ui[lang];
 ---
 
 
-<Section title="Sobre Mi" >
+<Section title={t.section.about} >
     <p>
         {summary}
     </p>

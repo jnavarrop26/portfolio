@@ -1,14 +1,21 @@
 ---
 import GitHub from "@/icons/GitHub.astro";
 import Section from "../Section.astro";
-import { projects } from "cv.json";
+import { projects as projectsEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const projects = lang === "en" ? cvEn.projects : projectsEs;
+const t = ui[lang];
+const localePrefix = lang === "en" ? "/en" : "";
 ---
 
-<Section title="Proyectos">
+<Section title={t.section.projects}>
   <ul>
     {
       projects.map(
-        ({ url, description, highlights, name, isActive, github }, index) => {
+        ({ url, description, highlights, name, isActive, github, caseStudyUrl }, index) => {
           const featured = index === 0;
           return (
             <li class:list={[{ featured }]}>
@@ -17,19 +24,24 @@ import { projects } from "cv.json";
                   <div class="title-row">
                     <h3>
                       {url
-                        ? <a href={url} target="_blank" title={`Ver el proyecto ${name}`}>{name}</a>
+                        ? <a href={url} target="_blank" title={t.fmt.viewProjectTitle(name)}>{name}</a>
                         : <span>{name}</span>
                       }
                     </h3>
-                    {featured && <span class="badge-featured">Destacado</span>}
+                    {featured && <span class="badge-featured">{t.misc.featured}</span>}
                     {github && (
-                      <a class="github-code-link" href={github} target="_blank" title={`Ver código fuente`}>
+                      <a class="github-code-link" href={github} target="_blank" title={t.misc.viewSourceCode}>
                         <GitHub />
                         {isActive && <span class="active-symbol">&bull;</span>}
                       </a>
                     )}
                   </div>
                   <p>{description}</p>
+                  {caseStudyUrl && (
+                    <a class="case-study-link" href={`${localePrefix}${caseStudyUrl}`}>
+                      {t.misc.viewCaseStudy} →
+                    </a>
+                  )}
                 </header>
                 <footer>
                   {highlights.map((highlight) => <span>{highlight}</span>)}
@@ -113,6 +125,18 @@ import { projects } from "cv.json";
     margin-bottom: 4px;
   }
 
+  .case-study-link {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .case-study-link:hover {
+    text-decoration: underline;
+  }
+
   .active-symbol {
     color: rgb(0, 188, 47);
     animation-name: flicker;
@@ -124,15 +148,20 @@ import { projects } from "cv.json";
   footer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 4px;
     margin-top: 4px;
   }
 
   footer span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #eaeaea;
     color: #333;
     font-size: 0.68rem;
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
     padding: 2px 8px;
     border-radius: 20px;
   }

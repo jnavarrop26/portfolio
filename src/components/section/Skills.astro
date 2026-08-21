@@ -1,9 +1,15 @@
 ---
 import Section from "../Section.astro";
-import { skills } from "cv.json";
+import { skills as skillsEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const skills = lang === "en" ? cvEn.skills : skillsEs;
+const t = ui[lang];
 ---
 
-<Section title="Habilidades">
+<Section title={t.section.skills}>
   <ul>
     {skills.map((skill) => <li>{skill}</li>)}
   </ul>

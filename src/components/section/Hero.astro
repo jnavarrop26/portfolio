@@ -1,14 +1,19 @@
 ---
-import { basics } from "cv.json";
+import { basics as basicsEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
 import Mail from "@/icons/Mail.astro";
 import Phone from "@/icons/Phone.astro";
 import X from "@/icons/X.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
 import GitHub from "@/icons/GitHub.astro";
-import DevTo  from "@/icons/DevTo.astro";
 import WorldMap from "@/icons/WorldMap.astro";
 import PublicationIcon from "@/icons/icon-publication.astro";
 import Section from "@/components/Section.astro";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const basics = lang === "en" ? cvEn.basics : basicsEs;
+const t = ui[lang];
 const { name, label, image, profiles, location, phone, email } = basics;
 const { city, region } = location;
 const labelLines = label.split(" - ");
@@ -17,13 +22,13 @@ const SOCIAL_ICONS: Record<string, any> = {
   GitHub,
   LinkedIn,
   X,
-  DevTo,
 };
 
-const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
-const linkedUrl = linkedInfo?.url
-
-const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+const printInfo = [
+  email,
+  phone,
+  ...profiles.map(({ network, url }) => `${network}: ${url}`),
+].filter(Boolean)
 ---
 
 <Section>
@@ -38,14 +43,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
         {city}, {region}
       </span>
       <footer class="print">
-        {printInfo}
+        {printInfo.map((item) => <span>{item}</span>)}
       </footer>
       <footer class="no-print">
         {
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              title={t.fmt.emailTitle(name, email)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,7 +62,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={t.fmt.phoneTitle(name, phone)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,7 +77,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={t.fmt.profileTitle(name, network)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -81,7 +86,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
             )
           })
         }
-        <a href="/blog" title="Ver publicaciones" class="pub-link">
+        <a href="/blog" title={t.misc.viewPublications} class="pub-link">
           <PublicationIcon />
         </a>
       </footer>
@@ -113,7 +118,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   }
 
   .label-stack {
-      displaym flexFind File                                            ff;
+    display: flex;
     flex-direction: column;
     gap: 2px;
   }
@@ -154,6 +159,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     display: flex;
     gap: 4px;
     margin-top: 8px;
+  }
+
+  footer.print {
+    flex-wrap: wrap;
+  }
+
+  footer.print span:not(:last-child)::after {
+    content: " • ";
   }
 
   footer a {

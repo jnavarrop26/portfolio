@@ -1,13 +1,17 @@
 ---
 import PublicationIcon from "@/icons/icon-publication.astro";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const t = ui[lang];
 
 const links = [
-  { label: "Sobre mí",      href: "#about" },
-  { label: "Experiencia",   href: "#experience" },
-  { label: "Educación",        href: "#education" },
-  { label: "Certificaciones", href: "#certifications" },
-  { label: "Proyectos",        href: "#projects" },
-  { label: "Habilidades",   href: "#skills" },
+  { label: t.nav.about,           href: "#about" },
+  { label: t.nav.experience,      href: "#experience" },
+  { label: t.nav.education,       href: "#education" },
+  { label: t.nav.certifications,  href: "#certifications" },
+  { label: t.nav.projects,        href: "#projects" },
+  { label: t.nav.skills,          href: "#skills" },
 ];
 ---
 
@@ -19,9 +23,11 @@ const links = [
       ))}
     </ul>
 
-    <a href="/blog" class="pub-btn" title="Publicaciones">
+    <a href={t.misc.switchLangHref} class="lang-btn">{t.misc.switchLangLabel}</a>
+
+    <a href="/blog" class="pub-btn" title={t.nav.publications}>
       <PublicationIcon />
-      <span>Publicaciones</span>
+      <span>{t.nav.publications}</span>
     </a>
   </nav>
 </header>
@@ -44,11 +50,11 @@ const links = [
     height: 52px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
   }
 
   ul {
-    margin-right: auto;
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -71,7 +77,8 @@ const links = [
     color: #111;
   }
 
-  .pub-btn {
+  .pub-btn,
+  .lang-btn {
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -82,6 +89,12 @@ const links = [
     border-radius: 6px;
     padding: 4px 10px;
     white-space: nowrap;
+  }
+
+  .lang-btn:hover,
+  .pub-btn:hover {
+    background: #f2f2f2;
+    color: #111;
   }
 
 
