@@ -1,9 +1,15 @@
 ---
 import Section from "../Section.astro";
-import { certificates } from "cv.json";
+import { certificates as certificatesEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const certificates = lang === "en" ? cvEn.certificates : certificatesEs;
+const t = ui[lang];
 ---
 
-<Section title="Certificaciones">
+<Section title={t.section.certifications}>
   <ul>
     {certificates.map(({ name, issuer, date, url, credentialId, highlights }) => (
       <li>
@@ -22,7 +28,7 @@ import { certificates } from "cv.json";
           </header>
 
           {credentialId && (
-            <p class="credential">ID: {credentialId}</p>
+            <p class="credential">{t.misc.credentialId}: {credentialId}</p>
           )}
           {highlights && highlights.length > 0 && (
             <footer>

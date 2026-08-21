@@ -9,9 +9,9 @@ import Projects from '@/components/section/Projects.astro';
 import Skills from '@/components/section/Skills.astro';
 import KeyboardManager from '@/components/KeyboardManager.astro';
 import NavBar from '@/components/NavBar.astro';
-import { basics } from 'cv.json';
+import cvEn from '@/data/cv.en.json';
 import { ui, getLang } from '@/i18n/ui';
-const { name, label } = basics;
+const { name, label } = cvEn.basics;
 const t = ui[getLang(Astro.currentLocale)];
 ---
 

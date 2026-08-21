@@ -1,0 +1,337 @@
+---
+import BadgeList from "@/components/BadgeList.astro";
+import GitHub from "@/icons/GitHub.astro";
+import { recyops } from "@/data/recyops";
+import { getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const data = recyops[lang];
+---
+
+<article class="case-study">
+  <header class="hero">
+    <div class="meta">
+      <span class="status">{data.status}</span>
+      <span>{data.role}</span>
+      <span>{data.period}</span>
+    </div>
+    <h1>{data.title}</h1>
+    <p class="tagline">{data.tagline}</p>
+    <div class="meta-tags">
+      {data.metaTags.map((tag) => <span>{tag}</span>)}
+    </div>
+    <div class="repo-links">
+      {data.repos.map(({ label, url }) => (
+        <a class="github-link" href={url} target="_blank" rel="noopener noreferrer">
+          <GitHub />
+          {label}
+        </a>
+      ))}
+    </div>
+  </header>
+
+  <section class="block">
+    <h2><span class="num">{data.problem.number}</span> {data.problem.title}</h2>
+    <p>{data.problem.body}</p>
+    <ul class="bullets">
+      {data.problem.bullets.map(({ title, body }) => (
+        <li>
+          <strong>{title}</strong> — {body}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">{data.architecture.number}</span> {data.architecture.title}</h2>
+    <h3>{data.architecture.subtitle}</h3>
+    <p>{data.architecture.body}</p>
+    <ol class="flow">
+      {data.architecture.flow.map(({ step, detail }) => (
+        <li>
+          <code>{step}</code>
+          {detail && <span class="detail">{detail}</span>}
+        </li>
+      ))}
+    </ol>
+    <p class="footnote">{data.architecture.footnote}</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">{data.backend.number}</span> {data.backend.title}</h2>
+    <div class="table">
+      {data.backend.rows.map(({ layer, decision }) => (
+        <div class="row">
+          <span class="layer">{layer}</span>
+          <span class="decision">{decision}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">{data.frontend.number}</span> {data.frontend.title}</h2>
+    <p>{data.frontend.intro}</p>
+    <div class="table">
+      {data.frontend.rows.map(({ layer, decision }) => (
+        <div class="row">
+          <span class="layer">{layer}</span>
+          <span class="decision">{decision}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">{data.process.number}</span> {data.process.title}</h2>
+    <p>{data.process.body}</p>
+    <p class="quote">{data.process.quote}</p>
+  </section>
+
+  <footer class="stack">
+    <BadgeList badges={[...data.stack]} />
+  </footer>
+</article>
+
+<style>
+  .case-study {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.75rem;
+    color: #777;
+  }
+
+  .status {
+    color: rgb(0, 140, 47);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: system-ui, sans-serif;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 620px;
+  }
+
+  .meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .meta-tags span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #555;
+    background: #f2f2f2;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+
+  .repo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0.75rem;
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #111;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: background 0.2s;
+  }
+
+  .github-link:hover {
+    background: #f2f2f2;
+  }
+
+  .github-link :global(svg) {
+    width: 15px;
+    height: 15px;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 680px;
+  }
+
+  .block h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #999;
+  }
+
+  .block h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #222;
+    font-family: system-ui, sans-serif;
+  }
+
+  .block > p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  .footnote {
+    font-size: 0.78rem;
+    color: #888;
+    border-left: 2px solid #eee;
+    padding-left: 12px;
+  }
+
+  .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bullets li {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .bullets strong {
+    color: #111;
+  }
+
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    list-style: none;
+    padding: 0;
+    margin: 4px 0;
+    font-size: 0.78rem;
+  }
+
+  .flow li {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 5px 10px;
+    border-left: 2px solid #eee;
+  }
+
+  .flow li:before {
+    content: "→";
+    color: #bbb;
+  }
+
+  .flow li:first-child:before {
+    content: "";
+  }
+
+  .flow code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 0.75rem;
+    color: #111;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .flow .detail {
+    color: #999;
+    font-size: 0.72rem;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .row {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .layer {
+    flex: 0 0 110px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .decision {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .quote {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #333;
+    border-left: 2px solid #111;
+    padding-left: 12px;
+  }
+
+  .stack {
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .stack :global(.badge-list) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 600px) {
+    .row {
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .layer {
+      flex: none;
+    }
+  }
+</style>

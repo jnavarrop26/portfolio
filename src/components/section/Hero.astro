@@ -1,5 +1,6 @@
 ---
-import { basics } from "cv.json";
+import { basics as basicsEs } from "cv.json";
+import cvEn from "@/data/cv.en.json";
 import Mail from "@/icons/Mail.astro";
 import Phone from "@/icons/Phone.astro";
 import X from "@/icons/X.astro";
@@ -8,6 +9,11 @@ import GitHub from "@/icons/GitHub.astro";
 import WorldMap from "@/icons/WorldMap.astro";
 import PublicationIcon from "@/icons/icon-publication.astro";
 import Section from "@/components/Section.astro";
+import { ui, getLang } from "@/i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const basics = lang === "en" ? cvEn.basics : basicsEs;
+const t = ui[lang];
 const { name, label, image, profiles, location, phone, email } = basics;
 const { city, region } = location;
 const labelLines = label.split(" - ");
@@ -44,7 +50,7 @@ const printInfo = [
           email && (
             <a
               href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+              title={t.fmt.emailTitle(name, email)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -56,7 +62,7 @@ const printInfo = [
           phone && (
             <a
               href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
+              title={t.fmt.phoneTitle(name, phone)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -71,7 +77,7 @@ const printInfo = [
             return (
               <a
                 href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
+                title={t.fmt.profileTitle(name, network)}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -80,7 +86,7 @@ const printInfo = [
             )
           })
         }
-        <a href="/blog" title="Ver publicaciones" class="pub-link">
+        <a href="/blog" title={t.misc.viewPublications} class="pub-link">
           <PublicationIcon />
         </a>
       </footer>
@@ -112,7 +118,7 @@ const printInfo = [
   }
 
   .label-stack {
-      displaym flexFind File                                            ff;
+    display: flex;
     flex-direction: column;
     gap: 2px;
   }

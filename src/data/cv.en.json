@@ -6,7 +6,7 @@
     "email": "antonionp26@gmail.com",
     "phone": "+57 3195398968",
     "url": "https://github.com/jnavarrop26",
-    "summary": "Estudiante de Ingeniería de Sistemas con más de 3 años de experiencia desarrollando software backend en Java y el ecosistema Spring. Diseño e implemento sistemas distribuidos — desde la arquitectura y especificación de requisitos hasta el consumo de servicios externos, integración de APIs y comunicación asíncrona con Kafka. Experiencia desplegando en AWS, asegurando identidad con Keycloak y aplicando principios SOLID, patrones de diseño y estándares ISO/IEC en proyectos reales. Actualmente explorando Spring AI y gRPC para sistemas de alto rendimiento.",
+    "summary": "Systems Engineering student with over 3 years of experience building backend software in Java and the Spring ecosystem. I design and implement distributed systems — from architecture and requirements specification to consuming external services, integrating APIs, and asynchronous communication with Kafka. Experience deploying to AWS, securing identity with Keycloak, and applying SOLID principles, design patterns, and ISO/IEC standards on real projects. Currently exploring Spring AI and gRPC for high-performance systems.",
     "location": {
       "address": "Bogotá D.C",
       "postalCode": "",
@@ -30,16 +30,16 @@
   "work": [
     {
       "name": "Parsons - Kinetics",
-      "position": "Desarrollador Backend",
+      "position": "Backend Developer",
       "url": "https://parsonskinetics.com/",
       "startDate": "Feb 2024",
       "endDate": "Nov 2024",
       "summary": "",
       "highlights": [
-        "Implementé un sistema de estimación de energía eólica consumiendo la API externa Open Meteo con Python y Django.",
-        "Desarrollé un pipeline ETL automatizado con consultas geoespaciales, usando NumPy y Pandas para análisis estadístico.",
-        "Arquitecturé una API RESTful con Django REST Framework para estimaciones en tiempo real con persistencia via Django ORM.",
-        "Implementé módulo de visualización de datos con Matplotlib y Seaborn para reportes de producción energética."
+        "Implemented a wind energy estimation system consuming the external Open Meteo API with Python and Django.",
+        "Built an automated ETL pipeline with geospatial queries, using NumPy and Pandas for statistical analysis.",
+        "Architected a RESTful API with Django REST Framework for real-time estimations backed by the Django ORM.",
+        "Implemented a data-visualization module with Matplotlib and Seaborn for energy production reports."
       ],
       "tags": [
         "Python",
@@ -52,17 +52,17 @@
     },
     {
       "name": "RecyOps",
-      "position": "Ingeniero de Sistemas",
+      "position": "Systems Engineer",
       "url": "",
-      "startDate": "Ene 2024",
-      "endDate": "Actualidad",
-      "summary": "Sistema de gestión de residuos plásticos con backend multi-tenant en Spring Boot, desde la especificación de requisitos hasta la implementación en producción.",
+      "startDate": "Jan 2024",
+      "endDate": "Present",
+      "summary": "Plastic waste management system with a multi-tenant Spring Boot backend, from requirements specification through production implementation.",
       "highlights": [
-        "Desarrollé el backend multi-tenant en Spring Boot 3 con aislamiento de datos por esquema en PostgreSQL (Hibernate + Flyway), permitiendo onboarding automático de nuevas empresas.",
-        "Implementé autenticación y autorización con JWT (OAuth2/Supabase) y control de acceso basado en roles.",
-        "Construí la suite de pruebas unitarias de la capa de servicio  con JUnit 5 y Mockito, midiendo cobertura con JaCoCo.",
-        "Establecí observabilidad del sistema con Prometheus/Grafana y logging asíncrono (Log4j2) para trazabilidad de operaciones de negocio.",
-        "Lideré el análisis de requisitos (ISO/IEC/IEEE 29148) y el diseño de arquitectura (UML, modelo E-R) aplicando criterios de calidad de ISO/IEC 25010 e IEEE 29119-3."
+        "Developed the multi-tenant backend in Spring Boot 3 with schema-based data isolation in PostgreSQL (Hibernate + Flyway), enabling automatic onboarding of new companies.",
+        "Implemented authentication and authorization with JWT (OAuth2/Supabase) and role-based access control.",
+        "Built the service-layer unit test suite with JUnit 5 and Mockito, measuring coverage with JaCoCo.",
+        "Set up system observability with Prometheus/Grafana and asynchronous logging (Log4j2) for business-operation traceability.",
+        "Led requirements analysis (ISO/IEC/IEEE 29148) and architecture design (UML, E-R model), applying quality criteria from ISO/IEC 25010 and IEEE 29119-3."
       ],
       "tags": [
         "Java",
@@ -79,13 +79,13 @@
     },
     {
       "name": "Ecosistema Java - SpringFramework",
-      "position": "Ingeniero de Sistemas",
+      "position": "Systems Engineer",
       "url": "https://github.com/jnavarrop26",
-      "startDate": "Ene 2022",
-      "endDate": "Actualidad",
+      "startDate": "Jan 2022",
+      "endDate": "Present",
       "summary": "",
       "highlights": [
-          "Diseñé e implementé APIs REST, GraphQL y SOAP con Spring Web, Spring GraphQL y Spring WS, exponiendo servicios backend a múltiples clientes. Integré capacidades de IA en aplicaciones backend mediante Spring AI.   Integré sistemas legados y consumí servicios externos vía SOAP y contratos WSDL.Prototipé comunicación de alto rendimiento entre microservicios usando  gRPC con Spring.Utilicé el AWS SDK for Java para integrar almacenamiento (S3),mensajería asíncrona (SQS/SNS) y cómputo (Lambda, EC2) en aplicaciones backend."
+        "Designed and implemented REST, GraphQL, and SOAP APIs with Spring Web, Spring GraphQL, and Spring WS, exposing backend services to multiple clients. Integrated AI capabilities into backend applications using Spring AI. Integrated legacy systems and consumed external services via SOAP and WSDL contracts. Prototyped high-performance communication between microservices using gRPC with Spring. Used the AWS SDK for Java to integrate storage (S3), asynchronous messaging (SQS/SNS), and compute (Lambda, EC2) into backend applications."
       ],
       "tags": [
         "Java",
@@ -103,72 +103,72 @@
     {
       "institution": "Universidad Central",
       "url": "https://www.ucentral.edu.co/",
-      "area": "Ingeniería de Sistemas",
-      "studyType": "Pregrado",
+      "area": "Systems Engineering",
+      "studyType": "Bachelor's Degree",
       "startDate": "2022",
-      "endDate": "Actualidad",
+      "endDate": "Present",
       "score": "",
       "courses": [
-        "Modelado de Software",
-        "Optimización de Procesos de Desarrollo",
-        "Gestión de Proyectos de Software",
-        "Evaluación de Algoritmos",
-        "Resolución Numérica de Problemas",
-        "Simulación Computacional"
+        "Software Modeling",
+        "Development Process Optimization",
+        "Software Project Management",
+        "Algorithm Evaluation",
+        "Numerical Problem Solving",
+        "Computational Simulation"
       ]
     },
     {
       "institution": "Universidad Tecnológica de Bolívar",
       "url": "https://www.utb.edu.co/",
-      "area": "Desarrollo Web",
-      "studyType": "Curso",
+      "area": "Web Development",
+      "studyType": "Course",
       "startDate": "2022",
       "endDate": "2023",
       "score": "",
       "courses": [
-        "Desarrollo de aplicaciones web",
-        "Ciclo de vida del software",
-        "Seguridad en aplicaciones web",
-        "API REST",
-        "Bases de datos",
-        "Programación en Python y Java"
+        "Web Application Development",
+        "Software Lifecycle",
+        "Web Application Security",
+        "REST APIs",
+        "Databases",
+        "Python and Java Programming"
       ]
     }
   ],
   "awards": [],
   "certificates": [
     {
-      "name": "Fundamentos en Analítica de Datos",
+      "name": "Data Analytics Foundations",
       "issuer": "DS4A / Colombia",
-      "date": "dic. 2022",
+      "date": "Dec 2022",
       "url": "",
       "credentialId": "",
       "highlights": [
-        "Analítica de Datos",
+        "Data Analytics",
         "Python",
-        "Estadística",
-        "Visualización de Datos"
+        "Statistics",
+        "Data Visualization"
       ]
     },
     {
-      "name": "IA, ML y Analítica Avanzada",
+      "name": "AI, ML and Advanced Analytics",
       "issuer": "Cámara de Comercio de Bogotá & CYMETRIA",
-      "date": "ene. 2026",
+      "date": "Jan 2026",
       "url": "",
       "credentialId": "",
       "highlights": [
-        "Inteligencia Artificial",
+        "Artificial Intelligence",
         "SQL",
         "Machine Learning",
-        "Analítica Avanzada",
+        "Advanced Analytics",
         "Python",
-        "Venta Consultiva"
+        "Consultative Selling"
       ]
     },
     {
-      "name": "Arquitectura en la Nube",
+      "name": "Cloud Architecture",
       "issuer": "CYMETRIA",
-      "date": "ago. 2024",
+      "date": "Aug 2024",
       "url": "",
       "credentialId": "",
       "highlights": [
@@ -197,7 +197,7 @@
       "publisher": "Personal Blog",
       "releaseDate": "2025-05-01",
       "url": "",
-      "summary": "Exploración de los principios y patrones más importantes para diseñar APIs REST escalables, mantenibles y seguras, con ejemplos prácticos en Java Spring Boot.",
+      "summary": "An exploration of the most important principles and patterns for designing scalable, maintainable, and secure REST APIs, with practical examples in Java Spring Boot.",
       "tags": [
         "REST",
         "Spring Boot",
@@ -211,7 +211,7 @@
       "publisher": "Universidad Central",
       "releaseDate": "2025-03-15",
       "url": "",
-      "summary": "Análisis comparativo de arquitecturas monolíticas y de microservicios en aplicaciones web modernas, evaluando escalabilidad, mantenibilidad y complejidad de desarrollo.",
+      "summary": "A comparative analysis of monolithic and microservice architectures in modern web applications, evaluating scalability, maintainability, and development complexity.",
       "tags": [
         "Architecture",
         "Microservices",
@@ -271,9 +271,9 @@
     {
       "name": "RecyOps",
       "isActive": true,
-      "startDate": "Ene 2024",
-      "endDate": "Actualidad",
-      "description": "Sistema web para la gestión integral de residuos plásticos — trazabilidad completa desde la recolección hasta la comercialización, con facturación automatizada.",
+      "startDate": "Jan 2024",
+      "endDate": "Present",
+      "description": "Web system for end-to-end plastic waste management — full traceability from collection to resale, with automated invoicing.",
       "highlights": [
         "Java",
         "Maven",
@@ -304,7 +304,7 @@
       "isActive": true,
       "startDate": "",
       "endDate": "",
-      "description": "Diseño e implementación de arquitecturas backend robustas con Java y Spring Framework, aplicando buenas prácticas de ingeniería de software, patrones de diseño y principios de sistemas distribuidos.",
+      "description": "Design and implementation of robust backend architectures with Java and Spring Framework, applying software engineering best practices, design patterns, and distributed systems principles.",
       "highlights": [
         "Spring Framework",
         "Java",
@@ -319,12 +319,12 @@
         "DHCP",
         "HTTP",
         "Kafka",
-        "Microservicios",
+        "Microservices",
         "Angular",
         "MCP",
         "Git",
         "AWS",
-        "Diseño de Sistemas"
+        "System Design"
       ],
       "url": "https://github.com/jnavarrop26",
       "github": "https://github.com/jnavarrop26?tab=repositories"
